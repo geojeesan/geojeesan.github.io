@@ -157,3 +157,30 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
+
+function sendEmail() {
+  var params = {
+    fullname: document.getElementById("fullname").value,
+    email: document.getElementById("email").value,
+    message: document.getElementById("message").value
+  };
+
+  const service_id = "service_fn7tirr";
+  const template_id = "template_ihs1e2p";
+
+  emailjs.send(service_id, template_id, params)
+    .then(
+      res => {
+        document.getElementById("fullname").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("message").value = "";
+        console.log(res);
+        alert("Email sent successfully");
+      }
+    ).catch(
+      err => {
+        console.log(err);
+        alert("Something went wrong");
+      }
+    );
+}

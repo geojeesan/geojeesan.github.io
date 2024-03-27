@@ -10,7 +10,7 @@
   <!--
     - favicon
   -->
-  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="./assets/images/pp.png" type="image/x-icon">
 
   <!--
     - custom css link
@@ -172,20 +172,27 @@
           <li class="navbar-item">
             <button class="navbar-link  active" data-nav-link>About</button>
           </li>
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link></button>
+          </li>
 
           <li class="navbar-item">
             <button class="navbar-link" data-nav-link>Resume</button>
           </li>
 
           <li class="navbar-item">
+            <button class="navbar-link" data-nav-link></button>
+          </li>
+          <!--  
+          <li class="navbar-item">
             <button class="navbar-link" data-nav-link>Projects</button>
           </li>
-
-          <!--
+          
+          
           <li class="navbar-item">
             <button class="navbar-link" data-nav-link>Blog</button>
-          </li>
-          -->
+          </li>-->
+        
           <li class="navbar-item">
             <button class="navbar-link" data-nav-link>Contact</button>
           </li>
@@ -739,15 +746,80 @@
           <ul class="skills-list content-card">
 
             <li class="skills-item">
-
               <div class="title-wrapper">
                 <h5 class="h5">Java</h5>
-                <!--<data value="80">90%</data>-->
               </div>
-              <!--
+            </li>
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">C & C++</h5>
+              </div>
+            </li>
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">Python</h5>
+              </div>
+            </li>
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">HTML & CSS</h5>
+              </div>
+            </li>
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">Flask Web Framework</h5>
+              </div>
+            </li>
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">Javascript</h5>
+              </div>
+            </li>
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">Linux / Bash</h5>
+              </div>
+            </li>
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">PostgreSQL</h5>
+              </div>
+            </li>
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">MySQL</h5>
+              </div>
+            </li>
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">SQLite</h5>
+              </div>
+            </li>
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">C#</h5>
+              </div>
+            </li>
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">Haskell</h5>
+              </div>
+            </li>
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">Git (GitLab)</h5>
+              </div>
+            </li>
+            <!--
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">Java</h5>
+                <data value="80">90%</data>
+              </div>
+              
               <div class="skill-progress-bg">
                 <div class="skill-progress-fill" style="width: 80%;"></div>
-              </div>-->
+              </div>
 
             </li>
 
@@ -788,7 +860,7 @@
                 <div class="skill-progress-fill" style="width: 50%;"></div>
               </div>
 
-            </li>
+            </li> -->
 
           </ul>
 
@@ -1245,7 +1317,7 @@
         <section class="mapbox" data-mapbox>
           <figure>
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d199666.5651251294!2d-121.58334177520186!3d38.56165006739519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809ac672b28397f9%3A0x921f6aaa74197fdb!2sSacramento%2C%20CA%2C%20USA!5e0!3m2!1sen!2sbd!4v1647608789441!5m2!1sen!2sbd"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14435.274970485907!2d55.342311712547925!3d25.243029292901046!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5d0c1a67a9dd%3A0xe1619a4dd393d10f!2sGarhoud%20-%20Dubai!5e0!3m2!1sen!2sae!4v1711536105937!5m2!1sen!2sae"
               width="400" height="300" loading="lazy"></iframe>
           </figure>
         </section>
@@ -1254,7 +1326,7 @@
 
           <h3 class="h3 form-title">Contact Form</h3>
 
-          <form action="#" class="form" data-form>
+          <form onsubmit="sendEmail(event)" class="form" data-form>
 
             <div class="input-wrapper">
               <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
@@ -1264,7 +1336,7 @@
 
             <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
 
-            <button class="form-btn" type="submit" disabled data-form-btn>
+            <button class="form-btn" onclick="sendMail()" type="submit" data-form-btn>
               <ion-icon name="paper-plane"></ion-icon>
               <span>Send Message</span>
             </button>
@@ -1288,12 +1360,30 @@
     - custom js link
   -->
   <script src="./assets/js/script.js"></script>
+  <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "XdQ3OIiVc_9vs8gu4",
+      });
+   })();
+</script>
 
   <!--
     - ionicon link
   -->
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <!-- <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    (function(){
+        emailjs.init("geojeesan@gmail.com"); // Replace "your_user_id" with your EmailJS user ID
+    })();
+  </script> -->
+  <!-- <script> emailjs.send("service_fn7tirr","template_ihs1e2p");</script> -->
 
 </body>
 
