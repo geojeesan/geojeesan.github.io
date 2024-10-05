@@ -26,13 +26,14 @@
 </head>
 
 <body>
+  <!-- WebParticles Background -->
+  <div class="particles" id="particles-js"></div>
 
   <!--
     - #MAIN
   -->
 
   <main>
-
     <!--
       - #SIDEBAR
     -->
@@ -116,7 +117,7 @@
             <div class="contact-info">
               <p class="contact-title">Linkedin</p>
 
-              <a href="https://www.linkedin.com/in/geo-jeesan-1b5986223/" class="contact-link">geo-jeesan</a>
+              <a href="https://www.linkedin.com/in/geojeesan/" class="contact-link">geojeesan</a>
             </div>
 
           </li>
@@ -187,23 +188,19 @@
           <li class="navbar-item">
             <button class="navbar-link  active" data-nav-link>About</button>
           </li>
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link></button>
-          </li>
+          
 
           <li class="navbar-item">
             <button class="navbar-link" data-nav-link>Resume</button>
           </li>
 
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link></button>
-          </li>
-          <!--  
+          
+           
           <li class="navbar-item">
             <button class="navbar-link" data-nav-link>Projects</button>
           </li>
           
-          
+          <!--
           <li class="navbar-item">
             <button class="navbar-link" data-nav-link>Blog</button>
           </li>-->
@@ -239,7 +236,7 @@
           </p>
 
           <p>
-            I am currently a 2nd year student at the University of Birmingham Dubai, studying the
+            I am currently a 3rd year student at the University of Birmingham Dubai, studying the
             MEng Computer Science with Software Engineering Course, a 4-year course with integrated 
             masters year in the UK.
           </p>
@@ -260,6 +257,48 @@
 
               <div class="service-icon-box">
                 <img src="./assets/images/icons8-artificial-intelligence-50.png" alt="design icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Neural Computation</h4>
+
+                
+              </div>
+
+            </li>
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/icons8-fingerprint-50.png" alt="design icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Security of Real-World Systems</h4>
+
+                
+              </div>
+
+            </li>
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/icons8-networking-50.png" alt="design icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Advanced Networking</h4>
+
+                
+              </div>
+
+            </li>
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/icons8-maths-50.png" alt="design icon" width="40">
               </div>
 
               <div class="service-content-box">
@@ -343,7 +382,7 @@
             <li class="service-item">
 
               <div class="service-icon-box">
-                <img src="./assets/images/icons8-full-stack-64.png" alt="camera icon" width="40">
+                <img src="./assets/images/icons8-application-development-50.png" alt="camera icon" width="40">
               </div>
 
               <div class="service-content-box">
@@ -644,6 +683,31 @@
         </header>
 
         <section class="timeline">
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="briefcase-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Experience</h3>
+          </div>
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Symphony Building Contracting LLC</h4>
+
+              <span>June 2024 — Aug 2024</span>
+
+              <p class="timeline-text">
+                Web Development Intern. Worked on the company website and developed a new website for the company.
+              </p>
+
+            </li>
+
+          </ol>
+        </section>
+
+        <section class="timeline">
 
           <div class="title-wrapper">
             <div class="icon-box">
@@ -906,15 +970,15 @@
             </li>
 
             <li class="filter-item">
-              <button data-filter-btn>Web design</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Applications</button>
-            </li>
-
-            <li class="filter-item">
               <button data-filter-btn>Web development</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Application</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Others</button>
             </li>
 
           </ul>
@@ -938,15 +1002,15 @@
               </li>
 
               <li class="select-item">
-                <button data-select-item>Web design</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Applications</button>
-              </li>
-
-              <li class="select-item">
                 <button data-select-item>Web development</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Application</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Others</button>
               </li>
 
             </ul>
@@ -956,17 +1020,17 @@
           <ul class="project-list">
 
             <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
+              <a href="https://speakvolumes.ai">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
 
-                  <img src="./assets/images/project-1.jpg" alt="finance" loading="lazy">
+                  <img src="./assets/images/project-1.png" alt="Volume" loading="lazy">
                 </figure>
 
-                <h3 class="project-title">Finance</h3>
+                <h3 class="project-title">SpeakVolumes</h3>
 
                 <p class="project-category">Web development</p>
 
@@ -974,149 +1038,78 @@
             </li>
 
             <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
+              <a href="https://symphonygulf.com">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
 
-                  <img src="./assets/images/project-2.png" alt="orizon" loading="lazy">
+                  <img src="./assets/images/project-2.png" alt="Volume" loading="lazy">
                 </figure>
 
-                <h3 class="project-title">Orizon</h3>
+                <h3 class="project-title">Symphony Building Contracting Website</h3>
 
                 <p class="project-category">Web development</p>
 
               </a>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="web design">
-              <a href="#">
+            <li class="project-item  active" data-filter-item data-category="web development" data-description="Website to aid people in public speaking through lessons using Artificial Intelligence. Designed and developed a full-stack website alongside a team using Flask (Python, html, CSS, JavaScript, and SQLite). It consists of multiple lessons that take audio from the user and process it with AI to show how they can improve their speaking skills. It is the precursor to SpeakVolumes.">
+              <a href="#" class="project-link">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
 
-                  <img src="./assets/images/project-3.jpg" alt="fundo" loading="lazy">
+                  <img src="./assets/images/project-3.png" alt="Volume" loading="lazy">
                 </figure>
 
-                <h3 class="project-title">Fundo</h3>
-
-                <p class="project-category">Web design</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="applications">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-4.png" alt="brawlhalla" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Brawlhalla</h3>
-
-                <p class="project-category">Applications</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web design">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-5.png" alt="dsm." loading="lazy">
-                </figure>
-
-                <h3 class="project-title">DSM.</h3>
-
-                <p class="project-category">Web design</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web design">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-6.png" alt="metaspark" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">MetaSpark</h3>
-
-                <p class="project-category">Web design</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-7.png" alt="summary" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Summary</h3>
+                <h3 class="project-title">Volume</h3>
 
                 <p class="project-category">Web development</p>
 
               </a>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="applications">
-              <a href="#">
+            <li class="project-item  active" data-filter-item data-category="others" data-description="Software Engineering project for selling wholesale recycled goods through an online store. Requirements engineering, software specification, analysis, designing, architecture, modelling, evaluation, testing and prototyping alongside a team. Creating UML diagrams, specifications, ethics, designing software for a wholesale recycled goods online store using agile development strategy.">
+              <a href="#" class="project-link">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
 
-                  <img src="./assets/images/project-8.jpg" alt="task manager" loading="lazy">
+                  <img src="./assets/images/project-4.png" alt="Recycling Marketplace" loading="lazy">
                 </figure>
 
-                <h3 class="project-title">Task Manager</h3>
+                <h3 class="project-title">Recycling Marketplace</h3>
 
-                <p class="project-category">Applications</p>
+                <p class="project-category">Software Engineering Project</p>
 
               </a>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
+            <li class="project-item  active" data-filter-item data-category="application" data-description="Simple application made with python tkinter for managing a retail store. Access, add and edit employee information, purchase items and manage expenses.">
+              <a href="#" class="project-link">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
 
-                  <img src="./assets/images/project-9.png" alt="arrival" loading="lazy">
+                  <img src="./assets/images/project-5.png" alt="Store Inventory Management System" loading="lazy">
                 </figure>
 
-                <h3 class="project-title">Arrival</h3>
+                <h3 class="project-title">Store Inventory Management System</h3>
 
-                <p class="project-category">Web development</p>
+                <p class="project-category">Python Tkinter Application</p>
 
               </a>
             </li>
 
+            
           </ul>
 
         </section>
@@ -1131,7 +1124,7 @@
         - #BLOG
       -->
 
-      <article class="blog" data-page="blog">
+      <!--<article class="blog" data-page="blog">
 
         <header>
           <h2 class="h2 article-title">Blog</h2>
@@ -1313,7 +1306,7 @@
 
         </section>
 
-      </article>
+      </article>-->
 
 
 
@@ -1331,10 +1324,7 @@
 
         <section class="mapbox" data-mapbox>
           <figure>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14435.274970485907!2d55.342311712547925!3d25.243029292901046!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5d0c1a67a9dd%3A0xe1619a4dd393d10f!2sGarhoud%20-%20Dubai!5e0!3m2!1sen!2sae!4v1711536105937!5m2!1sen!2sae"
-              width="400" height="300" loading="lazy"></iframe>
-          </figure>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14134.306493913698!2d55.4231669172688!3d25.131218422631463!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f638e64c81a77%3A0xc7450b273e22d42d!2sUniversity%20of%20Birmingham%20Dubai!5e0!3m2!1sen!2sae!4v1728153387106!5m2!1sen!2sae" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </section>
 
         <section class="contact-form">
@@ -1349,15 +1339,19 @@
           <ul>
             <li>
               <a href="mailto:geojeesan@gmail.com">
-                <ion-icon style="color: #f7ce77;" name="mail-outline"></ion-icon>
-                <span style="color: #f7ce77;">geojeesan@gmail.com</span>
+                <div style="display: flex;">
+                  <ion-icon style="color: #f7ce77;" name="mail-outline"></ion-icon>
+                  <span style="color: #f7ce77; padding-left: 10px">geojeesan@gmail.com</span>
+                </div>
               </a>
             </li>
             <br>
             <li>
               <a href="tel:00971507518714">
-                <ion-icon style="color: #f7ce77;" name="call-outline"></ion-icon>
-                <span style="color: #f7ce77;">+971 50 751 8714</span>
+                <div style="display: flex;">
+                  <ion-icon style="color: #f7ce77;" name="call-outline"></ion-icon>
+                  <span style="color: #f7ce77; padding-left: 10px">+971 50 751 8714</span>
+                </div>
               </a>
           </ul>
 
@@ -1383,8 +1377,8 @@
         </section>
 
       </article>
+      </div>
 
-    </div>
 
   </main>
 
@@ -1396,6 +1390,133 @@
   <!--
     - custom js link
   -->
+    <!-- WebParticles Script -->
+    <script src="./assets/js/particles.min.js"></script>
+    <script>
+      particlesJS("particles-js", {
+        "particles": {
+          "number": {
+            "value": 80,
+            "density": {
+              "enable": true,
+              "value_area": 800
+            }
+          },
+          "color": {
+            "value": "#ffffff"
+          },
+          "shape": {
+            "type": "circle",
+            "stroke": {
+              "width": 0,
+              "color": "#000000"
+            },
+            "polygon": {
+              "nb_sides": 5
+            },
+            "image": {
+              "src": "img/github.svg",
+              "width": 100,
+              "height": 100
+            }
+          },
+          "opacity": {
+            "value": 0.5,
+            "random": false,
+            "anim": {
+              "enable": false,
+              "speed": 1,
+              "opacity_min": 0.1,
+              "sync": false
+            }
+          },
+          "size": {
+            "value": 3,
+            "random": true,
+            "anim": {
+              "enable": false,
+              "speed": 40,
+              "size_min": 0.1,
+              "sync": false
+            }
+          },
+          "line_linked": {
+            "enable": true,
+            "distance": 150,
+            "color": "#ffffff",
+            "opacity": 0.4,
+            "width": 1
+          },
+          "move": {
+            "enable": true,
+            "speed": 6,
+            "direction": "none",
+            "random": false,
+            "straight": false,
+            "out_mode": "out",
+            "bounce": false,
+            "attract": {
+              "enable": false,
+              "rotateX": 600,
+              "rotateY": 1200
+            }
+          }
+        },
+        "interactivity": {
+          "detect_on": "window",
+          "events": {
+            "onhover": {
+              "enable": true,
+              "mode": "repulse"
+            },
+            "onclick": {
+              "enable": true,
+              "mode": "push"
+            },
+            "resize": true
+          },
+          "modes": {
+            "grab": {
+              "distance": 400,
+              "line_linked": {
+                "opacity": 1
+              }
+            },
+            "bubble": {
+              "distance": 400,
+              "size": 40,
+              "duration": 2,
+              "opacity": 8,
+              "speed": 3
+            },
+            "repulse": {
+              "distance": 200,
+              "duration": 0.4
+            },
+            "push": {
+              "particles_nb": 4
+            },
+            "remove": {
+              "particles_nb": 2
+            }
+          }
+        },
+        "retina_detect": true
+      });
+    </script>
+
+    <style>
+      #particles-js {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+        background-image: url("");
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: -1;
+      }
+    </style>
   <script src="./assets/js/script.js"></script>
   <script type="text/javascript"
         src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
