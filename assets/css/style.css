@@ -59,7 +59,7 @@
   --jet: hsl(0, 0%, 22%);
   --onyx: hsl(240, 1%, 17%);
   --eerie-black-1: hsl(240, 2%, 13%);
-  --eerie-black-2: hsl(240, 2%, 12%);
+  --eerie-black-2: hsla(240, 2%, 12%, 0.402);
   --smoky-black: hsl(0, 0%, 7%);
   --white-1: hsl(0, 0%, 100%);
   --white-2: hsl(0, 0%, 98%);
@@ -153,7 +153,8 @@ input, textarea {
 
 :focus { outline-color: var(--orange-yellow-crayola); }
 
-html { font-family: var(--ff-poppins); }
+html { font-family: var(--ff-poppins); 
+background: black;}
 
 body { background: transparent; }
 
@@ -175,6 +176,8 @@ article {
   padding: 15px;
   box-shadow: var(--shadow-1);
   z-index: 1;
+  backdrop-filter: blur(5px); /* Apply blur to the background */
+  -webkit-backdrop-filter: blur(5px); /* Safari support */
 }
 
 .separator {
@@ -466,6 +469,7 @@ main {
   border-radius: 12px 12px 0 0;
   box-shadow: var(--shadow-2);
   z-index: 5;
+  margin-top: 60px;
 }
 
 .navbar-list {
@@ -1319,7 +1323,7 @@ textarea.form-input::-webkit-resizer { display: none; }
    */
 
   main {
-    margin-top: 60px;
+    margin-top: 0px;
     margin-bottom: 100px;
   }
 
@@ -1795,7 +1799,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .sidebar, article { width: auto; }
 
-  article { min-height: 100%; }
+  article { min-height: 100%; margin-top: 60px;}
 
 
 
@@ -1896,6 +1900,7 @@ textarea.form-input::-webkit-resizer { display: none; }
   padding: 20px;
   z-index: 1000;
   border-radius: 8px;
+  color: white;
 }
 
 .popup h3 {
