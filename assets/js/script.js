@@ -191,8 +191,14 @@ document.addEventListener('DOMContentLoaded', () => {
   popup.classList.add('popup');
   popup.innerHTML = `
     <span class="close-btn">&times;</span>
-    <h3 class="popup-title"></h3>
-    <p class="popup-description"></p>
+    <div class="popup-content">
+      <h3 class="popup-title"></h3>
+      <img class="popup-image" src="" alt="Project Image" style="max-width:100%; margin-right:16px; display:none; border-radius: 8px; margin: 16px 0 16px 0;">
+      <p class="popup-description"></p>
+      <div style="display: flex; align-items: center; justify-content: center;">
+        <a href="#" class="popup-link" target="_blank" rel="noopener" style="display: none; margin-top: 12px; color: var(--orange-yellow-crayola); ">View Project</a>
+      </div>
+    </div>
   `;
   document.body.appendChild(popup);
 
@@ -205,12 +211,32 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
       const title = item.querySelector('.project-title').innerText;
       const description = item.getAttribute('data-description');
+      const imageElem = item.querySelector('.project-image');
+      const imageUrl = imageElem ? imageElem.src : null;
+      const projectLink = item.querySelector('.project-link')?.getAttribute('href');
+      
 
       popup.querySelector('.popup-title').innerText = title;
       popup.querySelector('.popup-description').innerText = description;
 
+      const popupImage = popup.querySelector('.popup-image');
+      if (imageUrl) {
+        popupImage.src = imageUrl;
+        popupImage.style.display = 'block';
+      } else {
+        popupImage.style.display = 'none';
+      }
+
       popup.style.display = 'block';
       popupOverlay.style.display = 'block';
+
+      const popupLink = popup.querySelector('.popup-link');
+      if (projectLink && projectLink.length > 2) {
+        popupLink.href = projectLink;
+        popupLink.style.display = 'inline-block';
+      } else {
+        popupLink.style.display = 'none';
+      }
     });
   });
 
