@@ -1713,6 +1713,7 @@ textarea.form-input::-webkit-resizer { display: none; }
     border-radius: 0 20px;
     padding: 0 20px;
     box-shadow: none;
+    margin-top: 0;
   }
 
   .navbar-list {
@@ -1791,7 +1792,9 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   body::-webkit-scrollbar-button { height: 60px; }
 
-
+  .navbar {
+    margin-top: 60px;
+  }
 
   /**
    * REUSED STYLE
@@ -1925,4 +1928,8 @@ textarea.form-input::-webkit-resizer { display: none; }
   background: rgba(0, 0, 0, 0.5);
   z-index: 999;
   display: none;
+}
+
+#particles-js {
+  padding-top: env(safe-area-inset-top);
 }
