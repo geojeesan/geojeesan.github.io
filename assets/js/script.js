@@ -189,11 +189,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const projectItems = document.querySelectorAll('.project-item');
   const popup = document.createElement('div');
   popup.classList.add('popup');
+  
   popup.innerHTML = `
     <span class="close-btn">&times;</span>
     <div class="popup-content">
       <h3 class="popup-title"></h3>
       <img class="popup-image" src="" alt="Project Image" style="max-width:100%; margin-right:16px; display:none; border-radius: 8px; margin: 16px 0 16px 0;">
+      <iframe class="popup-media" width="100%" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display:none; aspect-ratio: 16 / 9; border-radius: 8px; margin: 16px 0;"></iframe>
       <p class="popup-description"></p>
       <div style="display: flex; align-items: center; justify-content: center;">
         <a href="#" class="popup-link" target="_blank" rel="noopener" style="display: none; margin-top: 12px; color: var(--orange-yellow-crayola); ">View Project</a>
@@ -206,37 +208,80 @@ document.addEventListener('DOMContentLoaded', () => {
   popupOverlay.classList.add('popup-overlay');
   document.body.appendChild(popupOverlay);
 
+  const closePopup = () => {
+    popup.style.display = 'none';
+    popupOverlay.style.display = 'none';
+    popup.querySelector('.popup-media').src = ''; 
+  };
+
+  popup.querySelector('.close-btn').addEventListener('click', closePopup);
+  popupOverlay.addEventListener('click', closePopup);
+
   projectItems.forEach(item => {
     item.addEventListener('click', (e) => {
       e.preventDefault();
-      const title = item.querySelector('.project-title').innerText;
-      const description = item.getAttribute('data-description');
-      const imageElem = item.querySelector('.project-image');
-      const imageUrl = imageElem ? imageElem.src : null;
-      const projectLink = item.querySelector('.project-link')?.getAttribute('href');
+      const title = item.querySelector('.project-title')?.innerText || '';
+      const description = item.getAttribute('data-description') || '';
       
+      // Fallback in case your image doesn't have the explicit .project-image class
+      const imageElem = item.querySelector('.project-image') || item.querySelector('img');
+      const imageUrl = imageElem ? imageElem.src : null;
+
+      // Grab both links: the main href and the new data-attribute
+      const primaryLink = item.querySelector('.project-link')?.getAttribute('href');
+      const additionalLink = item.getAttribute('data-additionallink');
+
+      // Put them in an array and filter out any null/empty ones
+      const allLinks = [primaryLink, additionalLink].filter(href => href && href.length > 2);
+      
+      let embedUrl = null; 
+      let otherLink = null;
+
+      // Sort the links into "Embeddable" (YouTube/Figma) and "Other"
+      allLinks.forEach(href => {
+        if (href.includes('youtu.be') || href.includes('youtube.com/watch')) {
+          let videoId = href.includes('youtu.be/') ? href.split('youtu.be/')[1].split('?')[0] : href.split('v=')[1].split('&')[0];
+          embedUrl = `https://www.youtube.com/embed/${videoId}`;
+        } else if (href.includes('figma.com')) {
+          embedUrl = `https://www.figma.com/embed?embed_host=share&url=${encodeURIComponent(href)}`;
+        } else if (!otherLink) {
+          otherLink = href;
+        }
+      });
 
       popup.querySelector('.popup-title').innerText = title;
       popup.querySelector('.popup-description').innerText = description;
 
       const popupImage = popup.querySelector('.popup-image');
-      if (imageUrl) {
-        popupImage.src = imageUrl;
-        popupImage.style.display = 'block';
+      const popupMedia = popup.querySelector('.popup-media');
+      const popupLink = popup.querySelector('.popup-link');
+
+      // --- Handle the Video/Figma / Image Area ---
+      if (embedUrl) {
+        popupMedia.src = embedUrl;
+        popupMedia.style.display = 'block';
+        popupImage.style.display = 'none'; 
       } else {
-        popupImage.style.display = 'none';
+        popupMedia.src = ''; 
+        popupMedia.style.display = 'none';
+
+        if (imageUrl) {
+          popupImage.src = imageUrl;
+          popupImage.style.display = 'block';
+        } else {
+          popupImage.style.display = 'none';
+        }
       }
 
-      popup.style.display = 'block';
-      popupOverlay.style.display = 'block';
-
-      const popupLink = popup.querySelector('.popup-link');
-      if (projectLink && projectLink.length > 2) {
-        popupLink.href = projectLink;
+      if (otherLink) {
+        popupLink.href = otherLink;
         popupLink.style.display = 'inline-block';
       } else {
         popupLink.style.display = 'none';
       }
+
+      popup.style.display = 'block';
+      popupOverlay.style.display = 'block';
     });
   });
 
